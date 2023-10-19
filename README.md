@@ -21,6 +21,11 @@ PORT = Dinlenmesini İstediğiniz Port (örnek: 3000)
 
 ### Herşey Bittiğinde Komutu Çalıştırın ve Keyifle Çalışmasını Seyredin:
 
-```
+```shell
 yarn dev
+```
+
+## Test için
+```shell
+yarn test
 ```
