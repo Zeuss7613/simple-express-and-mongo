@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import app from "./index.js";
 import dotenv from "dotenv";
+import { logger } from "./Utilities/logger.js";
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
@@ -16,6 +17,10 @@ mongoose
     app.listen(PORT, () => {
       // 1.Parametre Olarak Dinleyeceği Portu Alıyor ve ALdığı Portu Dinlemeye Başladığında Fonksiyonu Tetikliyor
       console.log(`Go To Demo http://localhost:${PORT}/api/v1/hello`);
+      logger.info(`Server Started Working.`);
     });
   })
-  .catch((err) => console.error(err));
+  .catch((err) => {
+    console.error(err);
+    logger.error(`${err}`);
+  });
