@@ -9,7 +9,7 @@ mongoose
   .connect(process.env.MONGO_URI, {
     // .env dosyasındaki MONGO_URI Değişkenine Erişiyoruz ve Database Bağlantımızı Sağlıyoruz
     useUnifiedTopology: true,
-    useNerUrlParser: true,
+    useNewUrlParser: true,
   })
   .then(() => {
     // Bağlantı Hatasız Gerçekleşti ise Server Dinlemeye Başlıyor
@@ -19,5 +19,3 @@ mongoose
     });
   })
   .catch((err) => console.error(err));
-
-export { PORT }; // Başka Dosyalarda Kullanabilmek için Portu Export Ettim Siz Diğer Dosyalarda da dotenv modülünü kullanarak erişebilirsiniz
